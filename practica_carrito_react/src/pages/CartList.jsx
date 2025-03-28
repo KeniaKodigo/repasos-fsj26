@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import CardItem from '../components/CardItem'
+import MyModal from '../components/MyModal'
 
 export default function CartList({cart, setCart}) {
     let subTotal = 0
@@ -40,8 +41,9 @@ export default function CartList({cart, setCart}) {
                     <h4>${total}</h4>
                 </div>
                 <div className='text-center'>
-                    <button className='btn btn-danger'>Confirm Order</button>
+                    <button className='btn btn-danger' data-bs-toggle="modal" data-bs-target="#exampleModal">Confirm Order</button>
                 </div>
+                <MyModal cart={cart} total={total} />
             </section>
         </div>
     )
